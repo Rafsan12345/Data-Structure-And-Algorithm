@@ -1,3 +1,7 @@
+
+
+
+
 //Linked list
 
 #include <stdio.h>
@@ -93,7 +97,41 @@ for(int i=0;i<6;i++)
 
 
 
+#string length calculation Alogirithm Design 
 
+// Online C compiler to run C program online
+#include <stdio.h>
+char sh[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+int main() {
+   printf("null character Actual =  %d\n",sizeof(sh)/sizeof(sh[0])-1);
+   int i=1;
+   int i2 = 0;
+   int cnt=0;
+   while(1)
+   {
+     i=i+2;
+     i2=i2+2;
+     cnt++;
+     if(sh[0]=='\0')
+     {
+         printf("Index = %d\n",0); 
+         break;
+     }
+      if (sh[i2]=='\0' )
+     {
+         printf("length-> %d\n",i2); 
+         break;
+     }
+      if(sh[i]=='\0')
+     {
+         printf("length-> = %d\n",i); 
+         break;
+     }
+   }
+    printf("Count = %d\n",cnt);  
+
+    return 0;
+}
 
 
 
