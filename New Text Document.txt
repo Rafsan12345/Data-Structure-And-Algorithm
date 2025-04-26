@@ -59,18 +59,36 @@ for(int i=0;i<6;i++)
     }
     return 0;
 }
-.........................................
-
-
-
-
-
-
-
-
-
 
   //printf("Hello, World!");
 }
 
 .....................................................
+
+// left shift>>
+
+// Online C compiler to run C program online
+#include <stdio.h>
+int x[] = {1,2,3,4,5,6};
+int sh = 1;
+int main() {
+    // Write C code here
+    for(int i=5;i>=0;i--)
+    {
+      //printf("%d\n",x[i]);
+      
+      x[i]  =  x[i-sh] ;
+     //x[i+sh] =0;
+     //x[i-sh] =0;
+    }
+  
+for(int i=0;i<6;i++)
+    {
+     printf("%d\n",x[i]);
+    }
+    return 0;
+}
+
+
+
+
