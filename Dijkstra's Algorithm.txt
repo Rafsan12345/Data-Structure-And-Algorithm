@@ -46,3 +46,79 @@ int main() {
     dijkstra(graph, 2);  // বাড়ি 0 থেকে শুরু
     return 0;
 }
+.........................................................................................................
+✅ ১. Room-to-Room Fire Alert System using Graph & GPIO
+ধারণা:
+একটি বাড়ির বিভিন্ন রুমকে গ্রাফের নোড ধরা হয়েছে। প্রতিটি রুমে একটি তাপমাত্রা সেন্সর লাগানো (যেমন: LM35)। যদি কোনো রুমে আগুন লাগে (high temperature), তখন গ্রাফ ব্যবহার করে সবচেয়ে কম রাস্তায় ফায়ার সার্ভিস নির্দেশ পাঠানো হবে।
+
+ব্যবহার:
+
+Nodes: রুম
+
+Edges: সংযোগ রাস্তা (distance weighted)
+
+Input: সেন্সর থেকে তাপমাত্রা
+
+Output: LED/বাজার + Shortest path (Dijkstra)
+
+✅ ২. Smart Street Light System
+ধারণা:
+প্রতিটি রাস্তার ল্যাম্পপোস্টকে নোড ধরে একটি গ্রাফ তৈরি করা হয়েছে। যদি কোনো ল্যাম্পপোস্ট নষ্ট হয়, তবে গ্রাফ-ভিত্তিক decision দিয়ে nearest ল্যাম্পপোস্টকে activate করা যায়।
+
+ব্যবহার:
+
+Nodes: ল্যাম্পপোস্ট
+
+Edges: তারের সংযোগ
+
+Input: Light sensor / Fault status
+
+Output: GPIO দিয়ে আলো জ্বালানো/নিভানো
+
+✅ ৩. Autonomous Robot Navigation
+ধারণা:
+একটি রোবট বিভিন্ন পয়েন্টে যেতে চায়, যেখানে প্রতিটি পয়েন্টকে একটি নোড ধরা হয়েছে। রাস্তা (Edge) ওজনে নির্ধারিত (weight = দূরত্ব বা বাধা)। রোবট গ্রাফ অ্যালগরিদম (BFS/DFS/Dijkstra) ব্যবহার করে পথ নির্ধারণ করে।
+
+ব্যবহার:
+
+Nodes: স্থান
+
+Edges: রাস্তা বা পথ
+
+Input: Ultrasonic sensor বা Camera
+
+Output: মোটর/Servo control via GPIO
+
+✅ ৪. Smart Agriculture Field Monitoring
+ধারণা:
+একটি বড় মাঠকে কয়েকটি জোনে ভাগ করা হয়েছে (নোড)। প্রতিটি জোনে soil sensor/temperature sensor লাগানো। গ্রাফ দিয়ে zone-to-zone analysis করে কোন অংশে বেশি পানির দরকার তা নির্ধারণ করা হয়।
+
+ব্যবহার:
+
+Nodes: কৃষি জোন
+
+Edges: Pipe connection or wireless link
+
+Input: Sensor data (soil moisture, temp)
+
+Output: Relay/GPIO দিয়ে মোটর চালু বা বন্ধ
+
+✅ ৫. Factory Floor Monitoring & Fault Routing
+ধারণা:
+কারখানার প্রতিটি মেশিনকে নোড ধরে, তাদের সংযোগকে edge হিসেবে ধরে fault হলে BFS দিয়ে সিস্টেম nearest supervisor-কে নির্দেশ পাঠায়।
+
+ব্যবহার:
+
+Nodes: মেশিন
+
+Edges: সংযোগ (wired/wireless)
+
+Input: Sensor বা error interrupt
+
+Output: Alert via buzzer/display (GPIO)
+
+
+
+
+
+
