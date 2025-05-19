@@ -244,5 +244,49 @@ int main() {
 }
 ....................................................................................................................
 
+// Insertion Sort  
 
 
+
+#include <stdio.h>
+
+// Insertion Sort ফাংশন
+void insertionSort(int arr[], int n) {
+    int i, key, j;
+    for (i = 1; i < n; i++) {
+        key = arr[i];       // বর্তমান উপাদান
+        j = i - 1;
+
+        // সঠিক স্থানে key বসানোর জন্য সামনে এগিয়ে যাচ্ছি
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j]; // এক ধাপ ডানে সরানো
+            j = j - 1;
+        }
+        arr[j + 1] = key; // key-কে তার সঠিক স্থানে বসানো
+    }
+}
+
+// অ্যারে প্রিন্ট ফাংশন
+void printArray(int arr[], int n) {
+    for (int i = 0; i < n; i++)
+        printf("%d ", arr[i]);
+    printf("\n");
+}
+
+// মেইন ফাংশন
+int main() {
+    int data[] = {9, 5, 1, 4, 3};
+    int size = sizeof(data) / sizeof(data[0]);
+
+    printf("মূল অ্যারে: ");
+    printArray(data, size);
+
+    insertionSort(data, size);
+
+    printf("সাজানো অ্যারে (Ascending): ");
+    printArray(data, size);
+
+    return 0;
+}
+
+..................................................................................................................
